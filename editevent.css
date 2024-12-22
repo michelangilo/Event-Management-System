@@ -58,11 +58,6 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #be790a;
 }
-
-/* Add more styles as needed */
-/* Created by Tivotal */
-
-/* Google Fonts(Poppins) */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
 :root {
@@ -478,33 +473,20 @@ section {
 .contact form textarea {
   resize: none;
 }
-
-/* Add this to your existing CSS file or create a new one */
-
-/* Style for the button */
 button {
   padding: 10px 15px;
   background-color: #d88b0e;
-  /* Green background color */
   color: white;
-  /* White text color */
   border: none;
-  /* Remove border */
   border-radius: 5px;
-  /* Add border radius */
   cursor: pointer;
-  /* Add cursor pointer */
 }
 
-/* Hover effect for the button */
 button:hover {
   background-color: #be790a;
-  /* Darker green on hover */
 }
 
-
 footer {
-
   background: #111;
   padding: 2rem;
 }
@@ -564,7 +546,6 @@ html::-webkit-scrollbar-thumb {
   background: var(--theme-color);
   border-radius: 5rem;
 }
-
 
 .theme-toggler {
   position: fixed;

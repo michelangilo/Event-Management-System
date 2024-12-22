@@ -1,9 +1,5 @@
-// events.js
-
-// Data structures
 let venueCounter = 1;
 let eventCounter = 1;
-
 let venues = [];
 let headClashes = null;
 let headFreeTimes = null;
@@ -134,8 +130,6 @@ function insertEventRear() {
     }
 }
 
-
-
 // Function to find clashes and free time
 function clashAndFree() {
     let temp = venues[0];
@@ -143,7 +137,7 @@ function clashAndFree() {
 
     while (temp.nextVenue !== null) {
         curr = temp.firstEvent;
-        
+
         while (curr.next !== null) {
             if ((curr.endtime.slice(0, 2)) > curr.next.starttime.slice(0, 2)) {
                 let newClash = {
@@ -159,7 +153,7 @@ function clashAndFree() {
                 }
             } else {
 
-                if (((curr.next.starttime.slice(0, 2)) - (curr.endtime.slice(0, 2)))>= 1 ){
+                if (((curr.next.starttime.slice(0, 2)) - (curr.endtime.slice(0, 2))) >= 1) {
                     let newTime = {
                         event1: curr,
                         event2: curr.next,
@@ -213,7 +207,7 @@ function displayClashAndFree() {
         while (tempTime !== null) {
             showSuccess("Name of event 1: " + tempTime.event1.name + "\tStart time: " + tempTime.event1.starttime + "\tEnd time: " + tempTime.event1.endtime);
             showSuccess("Name of event 2: " + tempTime.event2.name + "\tStart time: " + tempTime.event2.starttime + "\tEnd time: " + tempTime.event2.endtime);
-            showSuccess("Total free time Found: "+ ((tempTime.event2.starttime.slice(0, 2))-(tempTime.event1.endtime.slice(0, 2)))+" Hours");
+            showSuccess("Total free time Found: " + ((tempTime.event2.starttime.slice(0, 2)) - (tempTime.event1.endtime.slice(0, 2))) + " Hours");
             tempTime = tempTime.next;
         }
     } else {
@@ -256,7 +250,7 @@ function insertClash(newClash) {
     }
 
     current.next = newClash;
-    newClash.next = null; 
+    newClash.next = null;
 }
 
 // Function to insert a new free time node in the linked list
@@ -268,7 +262,7 @@ function insertFreeTime(newTime) {
     }
 
     current.next = newTime;
-    newTime.next = null; 
+    newTime.next = null;
 }
 
 // Function to reschedule an event
@@ -301,7 +295,7 @@ function rescheduleEvent() {
 
     let timeTemp = headFreeTimes;
     let rescheduled = false;
-    
+
     while (timeTemp) {
         // Calculate the time difference in hours
         const timeDiffHours = timeTemp.timeDiff / 3600;
@@ -322,13 +316,8 @@ function rescheduleEvent() {
 
         timeTemp = timeTemp.next;
     }
-
-    
-        showError('No suitable time slots found for rescheduling the event.');
-    }
-
-
-
+    showError('No suitable time slots found for rescheduling the event.');
+}
 
 // Helper functions for displaying success and error messages
 function showSuccess(message) {
