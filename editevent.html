@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Events</title>
+
+  <!--swiper css-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+  <!--font awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+
+  <!--css file-->
+  <link rel="stylesheet" href="editevent.css" />
+
+</head>
+
+<body>
+  <!-- header section starts  -->
+  <header class="header">
+    <a href="#" class="logo"><span>Event</span>Sync</a>
+
+    <nav class="navbar">
+      <a href="admin.html">home</a>
+      <a href="editevent.html">edit events</a>
+      <a href="admin.html">contact</a>
+    </nav>
+
+    <div id="menu-bars" class="fas fa-bars"></div>
+  </header>
+
+  <main>
+    <h1 class="topheading"><span>edit</span> events</h1>
+    <div>
+      <h2 class="heading"><span>add</span> venue</h2>
+      <form id="addVenueForm">
+        <label for="venueName">Venue Name:</label>
+        <input type="text" id="venueName" required>
+
+        <button type="button" onclick="addVenue()">Add Venue</button>
+      </form>
+    </div>
+    <div>
+      <h2 class="heading"><span>add</span> event</h2>
+      <form id="addEventForm">
+        <label for="eventDate">Event Date:</label>
+        <input type="datetime-local" id="eventDate" required>
+
+        <label for="eventStartTime">Event Start Time:</label>
+        <input type="time" id="eventStartTime" required>
+
+        <label for="eventEndTime">Event End Time:</label>
+        <input type="time" id="eventEndTime" required>
+
+        <label for="eventDescription">Event Description:</label>
+        <textarea id="eventDescription" rows="4" required="" cols="36" style="width: 357px; height: 82px;"></textarea>
+
+        <label for="eventName">Event Name:</label>
+        <input type="text" id="eventName" required>
+
+        <label for="venueCode">Venue Code:</label>
+        <input type="number" id="venueCode" required min="1" style="margin: 0 100px 15px 0;">
+
+        <button type="button" id="addEventButton">Add Event</button>
+
+      </form>
+    </div>
+    <div>
+      <h2 class="heading"><span>delete</span> event</h2>
+      <form id="deleteEventForm">
+        <label for="deleteEventCode">Event Code:</label>
+        <input type="number" id="deleteEventCode" required min="1">
+        <label for="deleteEventVenue">Venue Code:</label>
+        <input type="number" id="deleteEventVenue" required min="1" style="margin: 0 100px 15px 0;">
+        <button type="button" onclick="deleteEvent()">Delete Event</button>
+      </form>
+    </div>
+    <div class="small">
+      <h2 class="heading" style="margin-bottom: 10px;"><span>Clashes and</span> Free Time</h2>
+      <button type="button" onclick="displayClashAndFree()">Display Clashes and Free Time</button>
+    </div>
+    <div>
+      <h2 class="heading"><span>Reschedule</span> Event</h2>
+      <form id="rescheduleEventForm">
+        <label for="rescheduleEventCode">Event Code:</label>
+        <input type="number" id="rescheduleEventCode" required min="1">
+
+        <label for="rescheduleVenueCode">Venue Code:</label>
+        <input type="number" id="rescheduleVenueCode" required min="1" style="margin: 0 100px 15px 0;">
+
+        <button type="button" onclick="rescheduleEvent()">Reschedule Event</button>
+      </form>
+    </div>
+  </main>
+  <!-- footer section starts  -->
+  <footer>
+    <div class="box-container">
+      <div class="box">
+        <h3>quick links</h3>
+        <a href="#"> <i class="fas fa-arrow-right"></i> home </a>
+        <a href="#"> <i class="fas fa-arrow-right"></i> edit events </a>
+        <a href="#"> <i class="fas fa-arrow-right"></i> reschedule events </a>
+        <a href="#"> <i class="fas fa-arrow-right"></i> schedule </a>
+        <a href="#"> <i class="fas fa-arrow-right"></i> contact </a>
+      </div>
+
+      <div class="box">
+        <h3>contact info</h3>
+        <a href="#"> <i class="fas fa-phone"></i> +91 8318 905 242 </a>
+        <a href="#"> <i class="fas fa-phone"></i> +91 9140 375 644 </a>
+        <a href="#"> <i class="fas fa-envelope"></i> eventsync@gmail.com </a>
+        <a href="#">
+          <i class="fas fa-map-marker-alt"></i> bangalore, india - 560076
+        </a>
+      </div>
+
+      <div class="box">
+        <h3>follow us</h3>
+        <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+        <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+        <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+        <a href="#"> <i class="fab fa-linkedin-in"></i> linkedin </a>
+      </div>
+    </div>
+
+    <div class="credit">
+      created by <span>EventSync</span> | all rights reserved
+    </div>
+    </section>
+  </footer>
+  <!--JS file-->
+  <script src="event.js"></script>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+
+</body>
+
+</html>
